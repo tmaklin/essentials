@@ -29,8 +29,8 @@ namespace essentials {
     std::locale loc;
     const std::time_put<char>& tp = std::use_facet<std::time_put<char>>(loc);
     const char* fmt = "%F %T";
-    tp.put(std::cout, std::cout, ' ', std::localtime(&t), fmt, fmt + strlen(fmt));
-    std::cout << ": " << msg << std::endl;
+    tp.put(std::cerr, std::cerr, ' ', std::localtime(&t), fmt, fmt + strlen(fmt));
+    std::cerr << ": " << msg << std::endl;
 }
 
 static const uint64_t GB = 1000 * 1000 * 1000;
